@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modificar datos guardados</title>
+</head>
+<body>
+	<center>
+		<form action="modificar.php" method="post">
+		<h2>Actualizar datos</h2>
+		<label>Que parte de la tabla deseas modificar:</label>
+		<p>¿nombre, apellido, email,tipo_tarjeta,titular, numero_tarjeta, cvv2, año, mes, direccion, ciudad, telefono?</p>
+		<label>Parametro elegido: </label>
+		<input placeholder="parametro" type="text" name="parametro" class="field" required pattern="[a-zA-Z0-9]+" /><br>
+		<label>Dato a cambiar:</label>
+		<input placeholder="anterior" type="text" name="anterior" class="field" required pattern="[a-zA-Z0-9]+" /><br>
+		<label>Dato nuevo:</label>
+		<input placeholder="nuevo" type="text" name="nuevo" class="field" required pattern="[a-zA-Z0-9]+" /><br>
+		<input type="submit" value="Actualizar">
+		</form>
+	</center>
+
+</body>
+</html>

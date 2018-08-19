@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario</title>
+	<link rel="stylesheet" type="text/css" href="cssformulario.css">
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	 <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script>
+        function validateContact() {
+            var valid = true;
+            $(".demoInputBox").css('background-color', '');
+            $(".info").html('');
+
+
+            if (!$("#captcha").val()) {
+                $("#captcha-info").html("(required)");
+                $("#captcha").css('background-color', '#FFFFDF');
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        function refreshCaptcha() {
+            $("#captcha_code").attr('src', 'captcha_code.php');
+        }
+
+    </script>
+</head>
+<body>
+	<div class="form">
+		<form action="guardar.php" method="post">
+			<h2>Formulario</h2><br>
+			<p>Datos Personales:</p>
+			<label for="nombre">Nombre: </label><br>
+			<input type="text" name="nombre" placeholder="Nombre" required/><br>
+			<label for="Apellido">Apellido: </label><br>
+			<input type="text" name="apellido" placeholder="Apellido" required/><br>
+			<label for="email">Email: </label><br>
+			<input type="email" name="correo" placeholder="email" required/><br>
+			<p>Datos Bancarios:</p>
+			<label>Tipo de tarjeta:</label><br>
+			<select name="tarjeta" class="Tarjeta ">
+										<option >&nbsp;</option>
+										<option value="Credito"> Credito </option>
+										<option value="Debito"> Debito </option>
+			</select><br>
+			<label>Titular: </label><br>
+			<input type="text" name="titular" required/><br>
+			<label>Numero de tarjeta: </label><br>
+			<input type="number" name="numerotarjeta" required/><br>
+			<label>CVV2: </label><br>
+			<input type="number" name="cvv2" placeholder="CVV2" required/><br>
+			<label>Fecha vencimiento: </label><br>
+			<select name="año" class="año">
+										<option>Año</option>
+										<option value="2018"> 2018 </option>
+										<option value="2019"> 2019 </option>
+										<option value="2020"> 2020 </option>
+										<option value="2021"> 2021 </option>
+										<option value="2022"> 2022 </option>
+										<option value="2023"> 2023 </option>
+										<option value="2024"> 2024 </option>
+										<option value="2025"> 2025 </option>
+										<option value="2026"> 2026 </option>
+										<option value="2027"> 2027 </option>
+										<option value="2028"> 2028 </option>
+										<option value="2029"> 2029 </option>
+										<option value="2030"> 2030 </option>
+										<option value="2031"> 2031 </option>
+			</select>
+			<select name="mes">
+										<option>Mes</option>
+										<option value="1">Enero</option>
+                                        <option value="2">Febrero</option>
+                                        <option value="3">Marzo</option>
+                                        <option value="4">Abril</option>
+                                        <option value="5">Mayo</option>
+                                        <option value="6">Junio</option>
+                                        <option value="7">Julio</option>
+                                        <option value="8">Agosto</option>
+                                        <option value="9">Septiembre</option>
+                                        <option value="10">Octubre</option>
+                                        <option value="11">Noviembre</option>
+                                        <option value="12">Diciembre</option>
+									 </select><br>
+
+			<p>Datos de envio:</p>								 
+			<label>Direccion: </label><br>
+			<input placeholder="Direccion" type="text" name="direccion" class="field" required pattern="[a-zA-Z0-9]+" /><br>
+			<label>Ciudad: </label><br>
+			<input type="text" name="ciudad" placeholder="ciudad" required/><br>
+			<label>Pais: </label><br>
+			<select name="estado" class="estado">
+				<option value="Seleccionar">Seleccionar</option>
+				<option value="Estados Unidos" >Estados Unidos</option>
+				<option value="Georgia" >Georgia</option>
+ 				<option value="Kuwait" >Kuwait</option>
+ 				<option value="Malawi" >Malawi</option>
+			</select><br>
+			<label>Telefono: </label><br>
+			<input type="number" name="telefono"><br>
+			
+			<div>
+                        <label>Captcha:</label><br>
+                        <span id="captcha-info" class="info"></span><br/>
+                        <input type="text" name="captcha" id="captcha" class="demoInputBox"  equired><br>
+                    </div>
+                    <div>
+                        <img id="captcha_code" src="captcha_code.php" />
+                        <button name="submit" class="BotonCambiar" onClick="refreshCaptcha();">Cambiar Captcha</button>
+                    </div>
+
+			<input type="submit" value="Enviar">
+		</form>
+
+	</div>
+
+</body>
+</html>

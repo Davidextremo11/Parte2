@@ -1,0 +1,18 @@
+.form{
+	position: relative;
+	width: 500px;
+	height: 2000px;
+	padding-left: 20px;
+	padding-top: 15px;
+	background-color: #83A1F7;
+	border-radius: 20px;
+	margin: auto;
+}
+input[type=submit]{
+	position: relative;
+	width: 150px;
+	height: 40px;
+	border-radius: 20px;
+	background-color: #11F11C;
+	font: 14px normal normal uppercase helvetica, arial, serif;
+}
